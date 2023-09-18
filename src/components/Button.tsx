@@ -9,8 +9,8 @@ export default function Button({ text, active,onClick }: ButtonProps) {
   return (
     <button className="relative flex flex-col items-center justify-center" onClick={onClick}>
       <svg
-        width="449"
-        height="183"
+        width="60"
+        height="25"
         viewBox="0 0 449 183"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,13 +43,13 @@ export default function Button({ text, active,onClick }: ButtonProps) {
           </linearGradient>
         </defs>
       </svg>
-      <div className="flex gap-[40px] items-center absolute">
-        <div className="relative w-[105px] min-w-[105px] h-[105px] min-h[105px] rounded-full bg-transparent border-[6px] border-white flex items-center justify-center">
+      <div className="flex gap-[5px] items-center absolute">
+        <div className="relative w-[15px] min-w-[15px] h-[15px] min-h[15px] rounded-full bg-transparent border-[1px] border-white flex items-center justify-center">
           {active && (
-            <div className="absolute left-[18%] top-[18%] bg-[#E22718] w-[60px] min-w-[60px] min-h-[60px] h-[60px] rounded-full m-auto "></div>
+            <div className=" bg-[#E22718] w-[7.5px] min-w-[7.5px] min-h-[7.5px] h-[7.5px] ml-[0.5px] mr-[0.5px] rounded-full "></div>
           )}
         </div>
-        <p className="text-[120px] leading-[162.6px] uppercase text-white font-light">
+        <p className="text-[16px] leading-[18px] uppercase text-white font-light">
           {text}
         </p>
       </div>

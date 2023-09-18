@@ -11,8 +11,10 @@ export default function FinalImage({
   accessToken,
   imageUUID,
 }: FinalImageProps) {
+  console.log("1")
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   useEffect(() => {
+    console.log("2")
     fetch(`${process.env.NEXT_PUBLIC_BACKENDURL}/assets/${imageUUID}`, {
       method: "GET",
       headers: {
@@ -20,8 +22,12 @@ export default function FinalImage({
       },
       cache: "no-store",
     })
-      .then((data) => data.blob())
+      .then((data) => {
+        console.log("3")
+        return data.blob()
+      })
       .then((imageBlob) => {
+        console.log("4")
         const blobUrl = URL.createObjectURL(imageBlob);
         setImageUrl(blobUrl);
       }).catch((err)=>{
@@ -31,8 +37,8 @@ export default function FinalImage({
   }, [accessToken, imageUUID]);
   return (
     <svg
-      width="1298"
-      height="1679"
+      width="320"
+      height="400"
       viewBox="0 0 1298 1679"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

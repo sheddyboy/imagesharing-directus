@@ -36,8 +36,8 @@ export default function SubmitButton({
       }}
     >
       <svg
-        width="600"
-        height="183"
+        width="80"
+        height="25"
         viewBox="0 0 600 183"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,8 @@ export default function SubmitButton({
           </linearGradient>
         </defs>
       </svg>
-      <p className="text-[130px] font-light text-white uppercase absolute">
+
+      <p className="text-[16px] leading-[18px] font-light text-white uppercase absolute">
         {text}
       </p>
     </div>

@@ -12,8 +12,8 @@ interface YesOrNoProps {
 export default function YesOrNo({ accessToken, uploadUUID }: YesOrNoProps) {
   const [selectedBtnId, setSelectedBtnId] = useState<null | "yes" | "no">(null);
   return (
-    <div className="relative justify-center items-center flex flex-col gap-[80px] mb-[280px]">
-      <div className="flex gap-[100px] items-center">
+    <div className="relative justify-center items-center flex flex-col gap-[80px] mb-[50px]">
+      <div className="flex gap-[20px] items-center">
         <Button
           active={selectedBtnId === "no"}
           text="NO"
