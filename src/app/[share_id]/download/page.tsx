@@ -1,15 +1,15 @@
+import DoneButton from "@/components/DoneButton";
 import FinalImage from "@/components/FinalImage";
-import YesOrNo from "@/components/YesOrNo";
 import { authenticateWithDirectus, getItemsFromCollection } from "@/utils";
 import Image from "next/image";
 
+interface DownloadPageProps {
+  params:{
+    share_id:string
+  }
+}
 
-
-export default async function Share({
-  params,
-}: {
-  params: { share_id: string };
-}) {
+export default async function DownloadPage({params}: DownloadPageProps) {
   const shareId = params.share_id;
   const { data: auth } = await authenticateWithDirectus({
     share_id: shareId,
@@ -22,10 +22,6 @@ export default async function Share({
   const imageUUID = itemsFromCollection[0].image;
   const uploadUUID = itemsFromCollection[0].id;
   console.log("imageUUID", imageUUID);
-  // const access_token = "";
-  // const imageUUID = "";
-  // const uploadUUID = "";
-
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">
       <div className="flex items-center mb-[26px] mt-[50px]">
@@ -42,19 +38,14 @@ export default async function Share({
           height={50}
         />
       </div>
-      <div className="relative ">
-        <FinalImage imageUUID={imageUUID} accessToken={access_token} download={false}/>
+      <div className="relative mb-[20px]">
+        <FinalImage
+          imageUUID={imageUUID}
+          accessToken={access_token}
+          download={true}
+        />
       </div>
-
-      <p className="uppercase text-[12px] text-center leading-[26px] max-w-[330px] text-white mb-[28px]">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-        tellus..
-      </p>
-      <div className="flex flex-col mb-[35px]">
-        <YesOrNo accessToken={access_token} uploadUUID={uploadUUID} />
-      </div>
+      <DoneButton/>
       <div className="mb-[50px]">
         <Image
           alt="bmw-park-logo"
