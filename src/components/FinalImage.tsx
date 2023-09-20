@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 interface FinalImageProps {
   imageUUID: string;
   accessToken: string;
-  download:boolean;
+  download: boolean;
 }
 
 export default function FinalImage({
   accessToken,
-  imageUUID,download
+  imageUUID,
+  download,
 }: FinalImageProps) {
   console.log("1");
   const [imageUrl, setImageUrl] = useState<null | string>(null);
@@ -54,27 +55,34 @@ export default function FinalImage({
             className="rounded-[6px]"
             fill
           />
-          {download &&<a href={imageUrl} download="my_photo" target="_blank" className="relative flex w-full h-full justify-center items-center">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          {download && (
+            <a
+              href={imageUrl}
+              download="my_photo"
+              target="_blank"
+              className="relative flex w-full h-full justify-center items-center"
             >
-              <rect
-                width="40"
-                height="40"
-                rx="20"
-                fill="white"
-                fillOpacity="0.1"
-              />
-              <path
-                d="M21.05 21.3509C21.4151 21.0348 21.7741 20.7217 22.1188 20.418C22.2124 20.3355 22.2124 20.3355 22.3058 20.253C23.2291 19.4365 23.9456 18.7785 24.3739 18.3472L25.8997 19.7214C25.4316 20.1928 24.6894 20.8744 23.7347 21.7186C23.6397 21.8025 23.6397 21.8025 23.5447 21.8863C22.9288 22.4288 22.2698 22.9998 21.6108 23.5643C21.2155 23.9029 20.9077 24.1645 20.7311 24.3136L20.0332 24.903L19.3364 24.3124C19.1599 24.1627 18.8521 23.9003 18.4568 23.5606C17.798 22.9943 17.139 22.4217 16.5232 21.878C16.4313 21.7967 16.4313 21.7967 16.3394 21.7153C15.3822 20.867 14.6381 20.1829 14.1696 19.7117L15.6944 18.3366C16.1242 18.7688 16.8434 19.4299 17.77 20.2512C17.8604 20.3313 17.8604 20.3313 17.9511 20.4114C18.2738 20.6963 18.609 20.9897 18.95 21.2861V10H21.05V21.3509ZM27 28V30H13V28H27Z"
-                fill="white"
-              />
-            </svg>
-          </a>}
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="50"
+                  height="50"
+                  rx="25"
+                  fill="white"
+                  fill-opacity="0.1"
+                />
+                <path
+                  d="M26.65 27.1615C27.2238 26.6557 27.7878 26.1547 28.3295 25.6688C28.4766 25.5368 28.4766 25.5368 28.6234 25.4047C30.0743 24.0984 31.2002 23.0457 31.8733 22.3555L34.2709 24.5543C33.5354 25.3085 32.369 26.399 30.8688 27.7497C30.7196 27.884 30.7196 27.884 30.5702 28.018C29.6024 28.8861 28.5668 29.7996 27.5313 30.7028C26.91 31.2447 26.4264 31.6631 26.1489 31.9017L25.0521 32.8449L23.9572 31.8998C23.6798 31.6604 23.1962 31.2405 22.575 30.6969C21.5397 29.7909 20.5041 28.8747 19.5365 28.0047C19.392 27.8747 19.392 27.8747 19.2476 27.7445C17.7435 26.3872 16.5742 25.2927 15.8379 24.5387L18.2341 22.3385C18.9095 23.0301 20.0396 24.0879 21.4957 25.4019C21.6378 25.5301 21.6378 25.5301 21.7802 25.6582C22.2874 26.1142 22.8141 26.5836 23.35 27.0578V9H26.65V27.1615ZM36 37.8V41H14V37.8H36Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          )}
         </foreignObject>
       ) : (
         <rect
