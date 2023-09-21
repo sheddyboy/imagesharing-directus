@@ -1,4 +1,4 @@
-import { AuthWithDirectusRes, ItemsFromCollection } from "@/app/types";
+import { AuthWithDirectusRes, ItemsFromCollection } from "@/types";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 export async function authenticateWithDirectus({
@@ -73,7 +73,6 @@ export async function updateAllowPublicObject({
     }
   )
     .then((res) => {
-      console.log("res", res);
       router.push(`/${share_id}/download?allowPublic=${value}`);
     })
     .catch((err) => console.log("err", err));

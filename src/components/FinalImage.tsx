@@ -14,11 +14,8 @@ export default function FinalImage({
   imageUUID,
   download,
 }: FinalImageProps) {
-  console.log("1");
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   useEffect(() => {
-    console.log("2");
-    console.log("imageUUID", imageUUID);
     fetch(`${process.env.NEXT_PUBLIC_BACKENDURL}/assets/${imageUUID}`, {
       method: "GET",
       headers: {
@@ -26,17 +23,14 @@ export default function FinalImage({
       },
     })
       .then((data) => {
-        console.log("3");
         return data.blob();
       })
       .then((imageBlob) => {
-        console.log("4");
         const blobUrl = URL.createObjectURL(imageBlob);
 
         setImageUrl(blobUrl);
       })
       .catch((err) => {
-        console.log("err", err);
       });
   }, [accessToken, imageUUID]);
   return (
@@ -74,7 +68,7 @@ export default function FinalImage({
                   height="50"
                   rx="25"
                   fill="white"
-                  fill-opacity="0.1"
+                  fillOpacity="0.1"
                 />
                 <path
                   d="M26.65 27.1615C27.2238 26.6557 27.7878 26.1547 28.3295 25.6688C28.4766 25.5368 28.4766 25.5368 28.6234 25.4047C30.0743 24.0984 31.2002 23.0457 31.8733 22.3555L34.2709 24.5543C33.5354 25.3085 32.369 26.399 30.8688 27.7497C30.7196 27.884 30.7196 27.884 30.5702 28.018C29.6024 28.8861 28.5668 29.7996 27.5313 30.7028C26.91 31.2447 26.4264 31.6631 26.1489 31.9017L25.0521 32.8449L23.9572 31.8998C23.6798 31.6604 23.1962 31.2405 22.575 30.6969C21.5397 29.7909 20.5041 28.8747 19.5365 28.0047C19.392 27.8747 19.392 27.8747 19.2476 27.7445C17.7435 26.3872 16.5742 25.2927 15.8379 24.5387L18.2341 22.3385C18.9095 23.0301 20.0396 24.0879 21.4957 25.4019C21.6378 25.5301 21.6378 25.5301 21.7802 25.6582C22.2874 26.1142 22.8141 26.5836 23.35 27.0578V9H26.65V27.1615ZM36 37.8V41H14V37.8H36Z"

@@ -21,10 +21,6 @@ export default async function Share({
   });
   const imageUUID = itemsFromCollection[0].image;
   const uploadUUID = itemsFromCollection[0].id;
-  console.log("imageUUID", imageUUID);
-  // const access_token = "";
-  // const imageUUID = "";
-  // const uploadUUID = "";
 
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">

@@ -7,7 +7,6 @@ import { useSearchParams } from "next/navigation";
 export default function DoneButton() {
     const searchParam = useSearchParams()
     const allowPublic = searchParam.get("allowPublic")
-    console.log("searchParam",searchParam.get("allowPublic"))
     return <Link href={`/${allowPublic === "true"?"thanks-for-sharing":"thanks-for-participating"}` }className="relative flex items-center justify-center mb-[25px]">
     <svg
       width="99"

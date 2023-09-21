@@ -20,8 +20,6 @@ export default async function DownloadPage({params}: DownloadPageProps) {
     NEXT_PUBLIC_COLLECTION_NAME: process.env.NEXT_PUBLIC_COLLECTION_NAME!,
   });
   const imageUUID = itemsFromCollection[0].image;
-  const uploadUUID = itemsFromCollection[0].id;
-  console.log("imageUUID", imageUUID);
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">
       <div className="flex items-center mb-[26px] mt-[50px]">
