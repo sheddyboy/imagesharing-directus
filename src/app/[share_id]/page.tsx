@@ -53,7 +53,7 @@ export default async function Share({
         tellus..
       </p>
       <div className="flex flex-col mb-[35px]">
-        <YesOrNo accessToken={access_token} uploadUUID={uploadUUID} />
+        <YesOrNo uploadUUID={uploadUUID} />
       </div>
       <div className="mb-[50px]">
         <Image

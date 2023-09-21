@@ -6,10 +6,9 @@ import Button from "./Button";
 
 interface YesOrNoProps {
   uploadUUID: string;
-  accessToken: string;
 }
 
-export default function YesOrNo({ accessToken, uploadUUID }: YesOrNoProps) {
+export default function YesOrNo({ uploadUUID }: YesOrNoProps) {
   const [selectedBtnId, setSelectedBtnId] = useState<null | "yes" | "no">(null);
   const router = useRouter();
   const {share_id} = useParams();
@@ -18,29 +17,24 @@ export default function YesOrNo({ accessToken, uploadUUID }: YesOrNoProps) {
     if (selectedBtnId == null) {
       // Only change the state if the clicked button is not already active
       setSelectedBtnId(btnId);
-      // fetch(
-      //   `${process.env.NEXT_PUBLIC_BACKENDURL}/items/${process.env.NEXT_PUBLIC_COLLECTION_NAME}/${uploadUUID}`,
-      //   {
-      //     method: "PUT",
-      //     body: JSON.stringify({
-      //       allowPublic: btnId === "yes" ? true : false,
-      //     }),
-      //     headers: {
-      //       authorization: `Bearer ${accessToken}`,
-      //     },
-      //     cache: "no-store",
-      //   }
-      // )
-      //   .then(() =>
-      //     router.push(
-      //       `/${share_id}/download?allowPublic=${btnId === "yes" ? "true" : "false"}`
-      //     )
-      //   )
-      //   .catch((err) => console.log("err", err));
-
-        router.push(
-          `/${share_id}/download?allowPublic=${btnId === "yes" ? "true" : "false"}`
+      fetch(
+        `${process.env.NEXT_PUBLIC_BACKENDURL}/items/${process.env.NEXT_PUBLIC_COLLECTION_NAME}/${uploadUUID}`,
+        {
+          method: "PATCH",
+          body: JSON.stringify({
+            allowPublic: btnId === "yes" ? true : false,
+          }),
+          cache: "no-store",
+        }
+      )
+        .then((res) =>{
+          console.log("res",res)
+          router.push(
+            `/${share_id}/download?allowPublic=${btnId === "yes" ? "true" : "false"}`
+          )
+        }
         )
+        .catch((err) => console.log("err", err));
     }
   };
   return (
