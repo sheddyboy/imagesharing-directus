@@ -3,8 +3,6 @@ import YesOrNo from "@/components/YesOrNo";
 import { authenticateWithDirectus, getItemsFromCollection } from "@/utils";
 import Image from "next/image";
 
-
-
 export default async function Share({
   params,
 }: {
@@ -29,7 +27,7 @@ export default async function Share({
       </div>
       <div className="relative flex items-center justify-center mb-[30px]">
         <h1 className=" text-[28px] uppercase text-white absolute">
-          Image sharing
+          Bild Teilen
         </h1>
         <Image
           alt="image-sharing-border"
@@ -39,14 +37,16 @@ export default async function Share({
         />
       </div>
       <div className="relative ">
-        <FinalImage imageUUID={imageUUID} accessToken={access_token} download={false}/>
+        <FinalImage
+          imageUUID={imageUUID}
+          accessToken={access_token}
+          download={false}
+        />
       </div>
 
       <p className="uppercase text-[12px] text-center leading-[26px] max-w-[330px] text-white mb-[28px]">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-        tellus..
+        Ich bin damit eiverstaden, das mein Bild über den Video-Würfel im BMW
+        Park geteilt wird.
       </p>
       <div className="flex flex-col mb-[35px]">
         <YesOrNo uploadUUID={uploadUUID} />

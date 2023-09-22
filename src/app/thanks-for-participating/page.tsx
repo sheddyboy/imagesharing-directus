@@ -169,16 +169,13 @@ export default function FinalPage() {
         </div>
 
         <span className="absolute text-[45px] flex uppercase text-center  font-medium leading-[60px] text-white">
-          Thanks
+          Vielen Dank
           <br />
-          for
-          <br /> participating
+          fürs
+          <br /> Mitmachen
         </span>
       </div>
       <div className="mb-[50px] flex flex-col items-center">
-        <p className="mb-[26px] text-center text-[18px] font-normal leading-[26px] uppercase max-w-[330px] text-white">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-        </p>
         <Link
           href=""
           className="relative flex items-center justify-center mb-[38px]"

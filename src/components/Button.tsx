@@ -1,6 +1,6 @@
 "use client";
 interface ButtonProps {
-  text: "YES"|"NO";
+  text: "JA"|"NEIN";
   active: boolean;
   onClick: () => void;
 }
@@ -24,16 +24,16 @@ export default function Button({ text, active, onClick }: ButtonProps) {
           width="116"
           height="47"
           rx="23.5"
-          stroke={text === "YES" ? "url(#yes)":"url(#no)"}
+          stroke={text === "JA" ? "url(#yes)":"url(#no)"}
           strokeWidth="3"
         />
         <defs>
           <linearGradient
-            id={text === "YES" ? "yes":"no"}
-            x1={text === "YES" ? "132.61":"-9.44681"}
-            y1={text === "YES" ? "-14.071":"25"}
-            x2={text === "YES" ? "57.3922":"96.0577"}
-            y2={text === "YES" ? "-48.8374":"36.8652"}
+            id={text === "JA" ? "yes":"no"}
+            x1={text === "JA" ? "132.61":"-9.44681"}
+            y1={text === "JA" ? "-14.071":"25"}
+            x2={text === "JA" ? "57.3922":"96.0577"}
+            y2={text === "JA" ? "-48.8374":"36.8652"}
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#E22718" />

@@ -4,12 +4,12 @@ import { authenticateWithDirectus, getItemsFromCollection } from "@/utils";
 import Image from "next/image";
 
 interface DownloadPageProps {
-  params:{
-    share_id:string
-  }
+  params: {
+    share_id: string;
+  };
 }
 
-export default async function DownloadPage({params}: DownloadPageProps) {
+export default async function DownloadPage({ params }: DownloadPageProps) {
   const shareId = params.share_id;
   const { data: auth } = await authenticateWithDirectus({
     share_id: shareId,
@@ -27,7 +27,7 @@ export default async function DownloadPage({params}: DownloadPageProps) {
       </div>
       <div className="relative flex items-center justify-center mb-[30px]">
         <h1 className=" text-[28px] uppercase text-white absolute">
-          Image sharing
+          Bild Teilen
         </h1>
         <Image
           alt="image-sharing-border"
@@ -43,7 +43,7 @@ export default async function DownloadPage({params}: DownloadPageProps) {
           download={true}
         />
       </div>
-      <DoneButton/>
+      <DoneButton />
       <div className="mb-[50px]">
         <Image
           alt="bmw-park-logo"

@@ -43,6 +43,6 @@ export default function DoneButton() {
         </linearGradient>
       </defs>
     </svg>
-    <p className="absolute text-white text-[16px] font-light">DONE</p>
+    <p className="absolute text-white text-[16px] uppercase font-light">FERTIG</p>
   </Link>
 }
