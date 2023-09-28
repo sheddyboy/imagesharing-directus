@@ -36,17 +36,16 @@ export default async function Share({
           height={50}
         />
       </div>
-      <div className="relative ">
+      <div className="relative mb-[26.5px]">
         <FinalImage
           imageUUID={imageUUID}
           accessToken={access_token}
-          download={false}
+          download={true}
         />
       </div>
 
-      <p className="uppercase text-[12px] text-center leading-[26px] max-w-[330px] text-white mb-[28px]">
-        Ich bin damit eiverstaden, das mein Bild über den Video-Würfel im BMW
-        Park geteilt wird.
+      <p className="uppercase text-[14px] text-center font-normal leading-[21px] max-w-[338px] text-white mb-[28px]">
+      Ich bin damit einverstanden, dass mein Bild auf der Video-Wand hier in der BMW Presenterbox und auf den Video-Würfel im BMW Park geteilt wird.
       </p>
       <div className="flex flex-col mb-[35px]">
         <YesOrNo uploadUUID={uploadUUID} />

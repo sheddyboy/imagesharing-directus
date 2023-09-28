@@ -30,14 +30,14 @@ export default function YesOrNo({ uploadUUID }: YesOrNoProps) {
     <div className="relative justify-center items-center flex flex-col gap-[80px] mb-[50px]">
       <div className="flex gap-[20px] items-center">
         <Button
-          active={selectedBtnId === "no"}
-          text="NEIN"
-          onClick={() => handleButtonClick("no")}
-        />
-        <Button
           active={selectedBtnId === "yes"}
           text="JA"
           onClick={() => handleButtonClick("yes")}
+        />
+        <Button
+          active={selectedBtnId === "no"}
+          text="NEIN"
+          onClick={() => handleButtonClick("no")}
         />
       </div>
     </div>

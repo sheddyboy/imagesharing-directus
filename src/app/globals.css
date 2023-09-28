@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.svg-box-shadow {
+    box-shadow: -80px 54px 84px 0px rgba(0, 0, 0, 0.30);
+  }

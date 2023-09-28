@@ -177,7 +177,7 @@ export default function FinalPage() {
       </div>
       <div className="mb-[50px] flex flex-col items-center">
         <Link
-          href=""
+          href="https://www.bmw.de/de/topics/faszination-bmw/sport-events/sport-und-kultur.html"
           className="relative flex items-center justify-center mb-[38px]"
         >
           <svg

@@ -24,12 +24,12 @@ export default function Button({ text, active, onClick }: ButtonProps) {
           width="116"
           height="47"
           rx="23.5"
-          stroke={text === "JA" ? "url(#yes)":"url(#no)"}
+          stroke={text === "JA" ? "url(#no1)":"url(#no2)"}
           strokeWidth="3"
         />
         <defs>
           <linearGradient
-            id={text === "JA" ? "yes":"no"}
+            id={text === "JA" ? "no2":"no1"}
             x1={text === "JA" ? "132.61":"-9.44681"}
             y1={text === "JA" ? "-14.071":"25"}
             x2={text === "JA" ? "57.3922":"96.0577"}
@@ -52,7 +52,7 @@ export default function Button({ text, active, onClick }: ButtonProps) {
             <div className=" bg-[#E22718] w-[16px] min-w-[16px] min-h-[16px] h-[16px] ml-[0.5px] mr-[0.5px] rounded-full "></div>
           )}
         </div>
-        <p className="text-[20px] leading-[24px] uppercase text-white font-light">
+        <p className={`text-[20px] leading-[24px] uppercase text-white ${active ? "font-bold":"font-light"}`}>
           {text}
         </p>
       </div>
