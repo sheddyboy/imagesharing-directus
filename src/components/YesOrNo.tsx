@@ -27,7 +27,7 @@ export default function YesOrNo({ uploadUUID }: YesOrNoProps) {
     }
   };
   return (
-    <div className="relative justify-center items-center flex flex-col gap-[80px] mb-[50px]">
+    <div className="relative justify-center items-center flex flex-col gap-[80px]">
       <div className="flex gap-[20px] items-center">
         <Button
           active={selectedBtnId === "yes"}

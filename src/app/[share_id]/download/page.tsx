@@ -20,23 +20,24 @@ export default async function DownloadPage({ params }: DownloadPageProps) {
     NEXT_PUBLIC_COLLECTION_NAME: process.env.NEXT_PUBLIC_COLLECTION_NAME!,
   });
   const imageUUID = itemsFromCollection[0].image;
+
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">
-      <div className="flex items-center mb-[26px] mt-[50px]">
-        <Image alt="logos" src="/assets/logos.svg" width={166} height={64} />
+      <div className="flex items-center mb-[36px] mt-[27px]">
+      <Image alt="logos" src="/assets/logos.png" width={195} height={87} />
       </div>
       <div className="relative flex items-center justify-center mb-[30px]">
-        <h1 className=" text-[28px] uppercase text-white absolute">
+        <h1 className=" text-[28px] uppercase leading-[37.94px] text-white absolute">
           Bild Teilen
         </h1>
         <Image
           alt="image-sharing-border"
           src="/assets/image-sharing-border.svg"
-          width={266}
+          width={213}
           height={50}
         />
       </div>
-      <div className="relative mb-[20px]">
+      <div className="relative mb-[97px]">
         <FinalImage
           imageUUID={imageUUID}
           accessToken={access_token}

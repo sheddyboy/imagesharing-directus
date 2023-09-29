@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function FinalPage() {
   return (
     <div className="min-h-screen flex flex-col bg-bmw-gradient bg-cover items-center overflow-hidden">
-      <div className="mb-[132px] mt-[50px]">
-        <Image alt="logos" src="/assets/logos.svg" width={166} height={64} />
+      <div className="mb-[132px] mt-[27px]">
+        <Image alt="logos" src="/assets/logos.png" width={195} height={87} />
       </div>
-      <div className="mb-[67px] relative flex items-center justify-center">
+      <div className="mb-[140px] relative flex items-center justify-center">
         <Image
           alt="thanks-for-sharing-border"
           src="/assets/thanks-for-sharing-border.svg"
@@ -167,7 +167,6 @@ export default function FinalPage() {
             </defs>
           </svg>
         </div>
-
         <span className="absolute text-[45px] flex uppercase text-center  font-medium leading-[60px] text-white">
           Vielen Dank
           <br />
@@ -178,45 +177,46 @@ export default function FinalPage() {
       <div className="mb-[50px] flex flex-col items-center">
         <Link
           href="https://www.bmw.de/de/topics/faszination-bmw/sport-events/sport-und-kultur.html"
-          className="relative flex items-center justify-center mb-[38px]"
+          className="relative flex items-center justify-center mb-[68px]"
         >
           <svg
-            width="160"
+            width="205"
             height="47"
-            viewBox="0 0 160 47"
+            viewBox="0 0 205 47"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect
               x="1"
               y="1"
-              width="158"
+              width="203"
               height="45"
               rx="22.5"
-              stroke="url(#paint0_linear_588_83)"
-              strokeWidth="2"
+              stroke="url(#paint0_linear_10_3)"
+              stroke-width="2"
             />
             <defs>
               <linearGradient
-                id="paint0_linear_588_83"
-                x1="178.3"
+                id="paint0_linear_10_3"
+                x1="228.446"
                 y1="-13.2268"
-                x2="92.891"
-                y2="-69.6924"
+                x2="136.884"
+                y2="-90.7859"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#E22718" />
+                <stop stop-color="#E22718" />
                 <stop
                   offset="0.284616"
-                  stopColor="#B42B2C"
-                  stopOpacity="0.807031"
+                  stop-color="#B42B2C"
+                  stop-opacity="0.807031"
                 />
-                <stop offset="1" stopColor="#003D78" stopOpacity="0.05" />
+                <stop offset="1" stop-color="#003D78" stop-opacity="0.05" />
               </linearGradient>
             </defs>
           </svg>
-
-          <p className="absolute text-[20px] font-light text-white">BMW SITE</p>
+          <p className="absolute text-[20px] font-light text-white">
+            BMW WEBSITE
+          </p>
         </Link>
         <div>
           <Image

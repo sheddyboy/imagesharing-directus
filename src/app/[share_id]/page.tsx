@@ -22,8 +22,8 @@ export default async function Share({
 
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">
-      <div className="flex items-center mb-[26px] mt-[50px]">
-        <Image alt="logos" src="/assets/logos.svg" width={166} height={64} />
+      <div className="flex items-center mb-[36px] mt-[27px]">
+        <Image alt="logos" src="/assets/logos.png" width={195} height={87} />
       </div>
       <div className="relative flex items-center justify-center mb-[30px]">
         <h1 className=" text-[28px] uppercase text-white absolute">
@@ -32,7 +32,7 @@ export default async function Share({
         <Image
           alt="image-sharing-border"
           src="/assets/image-sharing-border.svg"
-          width={266}
+          width={213}
           height={50}
         />
       </div>
@@ -47,7 +47,7 @@ export default async function Share({
       <p className="uppercase text-[14px] text-center font-normal leading-[21px] max-w-[338px] text-white mb-[28px]">
       Ich bin damit einverstanden, dass mein Bild auf der Video-Wand hier in der BMW Presenterbox und auf den Video-Würfel im BMW Park geteilt wird.
       </p>
-      <div className="flex flex-col mb-[35px]">
+      <div className="flex flex-col mb-[65px]">
         <YesOrNo uploadUUID={uploadUUID} />
       </div>
       <div className="mb-[50px]">
