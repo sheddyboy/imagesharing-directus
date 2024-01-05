@@ -13,3 +13,10 @@ export interface ItemsFromCollection {
     allowPublic: boolean;
   }[];
 }
+export interface PublicSettingsResponse {
+  data: {
+    contestLink: string;
+    contestHeader: string;
+    contestFooter: string;
+  };
+}

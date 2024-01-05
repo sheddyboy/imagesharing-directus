@@ -12,7 +12,8 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        "bmw-gradient":"url('/assets/Artboard 1@4x 1.png')"
+        "bmw-gradient":"url('/assets/Artboard 1@4x 1.png')",
+        "car-config-bg":"url('/assets/car-config-bg.png')"
       },
     },
   },

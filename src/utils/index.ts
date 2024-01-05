@@ -1,4 +1,4 @@
-import { AuthWithDirectusRes, ItemsFromCollection } from "@/types";
+import { AuthWithDirectusRes, ItemsFromCollection, PublicSettingsResponse } from "@/types";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 export async function authenticateWithDirectus({
@@ -37,6 +37,7 @@ export async function getItemsFromCollection({
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+      cache: "no-store",
     }
   );
 
@@ -76,4 +77,25 @@ export async function updateAllowPublicObject({
       router.push(`/${share_id}/download?allowPublic=${value}`);
     })
     .catch((err) => console.log("err", err));
+}
+export async function getPublicSettings() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKENDURL}/items/PublicSettings`,
+      {
+        method: "GET",
+        cache: "no-store",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    }
+
+    const data = await response.json() as PublicSettingsResponse;
+    return data;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error; // Rethrow the error to propagate it to the caller if needed
+  }
 }
