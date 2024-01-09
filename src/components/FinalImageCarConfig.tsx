@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface FinalImageOrDownloadBtnProps {
@@ -15,7 +15,6 @@ export default function FinalImageOrDownloadBtn({
   imageUUID,
   downloadBtn,
 }: FinalImageOrDownloadBtnProps) {
-  const router = useRouter();
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BACKENDURL}/assets/${imageUUID}`, {
@@ -62,7 +61,6 @@ export default function FinalImageOrDownloadBtn({
               download="my_photo"
               target="_blank"
               className="absolute"
-              onClick={() => router.push("/carconfig/thanks-for-participating")}
             >
               <svg
                 width="80"
@@ -87,17 +85,7 @@ export default function FinalImageOrDownloadBtn({
           )}
         </div>
       ) : (
-        <a
-          href={imageUrl ? imageUrl : "#"}
-          download="my_photo"
-          target="_blank"
-          className="car-config-button mb-[70px]"
-          onClick={() => {
-            imageUrl && router.push("/carconfig/thanks-for-participating");
-          }}
-        >
-          Download
-        </a>
+        <Link className="car-config-button mb-[70px]" href="/carconfig/thanks-for-participating">WEITER</Link>
       )}
     </>
   );
