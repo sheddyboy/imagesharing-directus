@@ -10,7 +10,7 @@ export default async function ThanksForParticipation({}: ThanksForParticipationP
       <div className=" border border-[#0885fecc] rounded-[10px] w-full flex flex-col px-[7px] justify-start items-center">
         <Image
           alt="logos"
-          src="/assets/carconfig-logos.png"
+          src="/assets/car-config-top-logos.svg"
           width={145}
           height={53}
           className="mb-[28px] mt-[50px]"
@@ -27,7 +27,7 @@ export default async function ThanksForParticipation({}: ThanksForParticipationP
         <Image
           className="mb-[25px]"
           alt="logos"
-          src="/assets/carconfig-footer-logos.png"
+          src="/assets/car-config-bottom-logos.svg"
           width={198}
           height={26}
         />
