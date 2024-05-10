@@ -1,4 +1,8 @@
-import { AuthWithDirectusRes, ItemsFromCollection, PublicSettingsResponse } from "@/types";
+import {
+  AuthWithDirectusRes,
+  ItemsFromCollection,
+  PublicSettingsResponse,
+} from "@/types";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 export async function authenticateWithDirectus({
@@ -92,7 +96,7 @@ export async function getPublicSettings() {
       throw new Error(`Failed to fetch data. Status: ${response.status}`);
     }
 
-    const data = await response.json() as PublicSettingsResponse;
+    const data = (await response.json()) as PublicSettingsResponse;
     return data;
   } catch (error) {
     console.error("Error:", error);
