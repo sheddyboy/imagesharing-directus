@@ -15,14 +15,14 @@ export default async function ThanksForParticipation({}: ThanksForParticipationP
           height={53}
           className="mb-[28px] mt-[50px]"
         />
-        <p className="text-white text-center text-[36px] font-medium leading-[54px] uppercase">
+        <p className="text-white text-center text-[36px] font-medium leading-[54px]">
        {data.data.contestHeader}
         </p>
-        <p className="uppercase text-white text-[17px] leading-[30px] text-center font-medium mt-[53px] mb-[77px]">
+        <p className="text-white text-[17px] leading-[30px] text-center font-medium mt-[53px] mb-[77px]">
         {data.data.contestFooter}
         </p>
         <a href={data.data.contestLink} className="car-config-button mb-[70px]">
-        Jetzt teilnehmen
+        {data.data.contestButton}
         </a>
         <Image
           className="mb-[25px]"
