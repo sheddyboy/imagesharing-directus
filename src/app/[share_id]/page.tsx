@@ -1,24 +1,31 @@
 import FinalImage from "@/components/FinalImage";
 import YesOrNo from "@/components/YesOrNo";
-import { authenticateWithDirectus, getItemsFromCollection } from "@/utils";
+import {
+  authenticateWithDirectus,
+  getItemsFromCollection,
+  getSharesInfo,
+} from "@/utils";
 import Image from "next/image";
 
 export default async function Share({
-  params,
+  params: { share_id },
 }: {
   params: { share_id: string };
 }) {
-  const shareId = params.share_id;
   const { data: auth } = await authenticateWithDirectus({
-    share_id: shareId,
+    share_id,
   });
   const { access_token } = auth;
+  const {
+    data: { item: item_id },
+  } = await getSharesInfo({ share_id });
   const { data: itemsFromCollection } = await getItemsFromCollection({
     accessToken: access_token,
     NEXT_PUBLIC_COLLECTION_NAME: process.env.NEXT_PUBLIC_COLLECTION_NAME!,
+    item_id,
   });
-  const imageUUID = itemsFromCollection[0].image;
-  const uploadUUID = itemsFromCollection[0].id;
+  const imageUUID = itemsFromCollection.image;
+  const uploadUUID = itemsFromCollection.id;
 
   return (
     <main className="bg-bmw-gradient min-h-screen bg-cover flex flex-col items-center">
@@ -45,7 +52,8 @@ export default async function Share({
       </div>
 
       <p className="uppercase text-[14px] text-center font-normal leading-[21px] max-w-[338px] text-white mb-[28px]">
-      Ich bin damit einverstanden, dass mein Bild auf der Video-Wand hier in der BMW Presenterbox und auf den Video-Würfel im BMW Park geteilt wird.
+        Ich bin damit einverstanden, dass mein Bild auf der Video-Wand hier in
+        der BMW Presenterbox und auf den Video-Würfel im BMW Park geteilt wird.
       </p>
       <div className="flex flex-col mb-[65px]">
         <YesOrNo uploadUUID={uploadUUID} />

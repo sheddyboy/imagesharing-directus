@@ -11,12 +11,26 @@ export interface ItemsFromCollection {
     date_updated: Date;
     image: string;
     allowPublic: boolean;
-  }[];
+    type: string;
+  };
 }
 export interface PublicSettingsResponse {
   data: {
     contestLink: string;
     contestHeader: string;
     contestFooter: string;
+  };
+}
+
+export interface ShareInfoResponse {
+  data: {
+    id: string;
+    collection: string;
+    item: string;
+    password: null;
+    max_uses: null;
+    times_used: number;
+    date_start: null;
+    date_end: null;
   };
 }
