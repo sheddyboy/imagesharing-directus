@@ -41,9 +41,9 @@ export default async function CarConfig({
           downloadBtn={false}
         />
 
-        <p className="uppercase text-white text-[30px] leading-[37px] text-center font-medium mt-[16px] mb-[34px]">
-          Hol dir dein <br />
-          BMW iX2 Design 
+        <p className="text-white text-[30px] leading-[37px] text-center font-medium mt-[16px] mb-[34px]">
+          HOL DIR DEIN <br />
+          BMW iX2 DESIGN 
         </p>
         <FinalImageOrDownloadBtn
           access_token={access_token}

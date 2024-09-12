@@ -19,6 +19,7 @@ export interface PublicSettingsResponse {
     contestLink: string;
     contestHeader: string;
     contestFooter: string;
+    contestButton: string;
   };
 }
 
